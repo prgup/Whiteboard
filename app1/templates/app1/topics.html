@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Topics</title>
+</head>
+<body>
+	<a href = "{% url 'app1:home'  %}"> 
+		Home
+	</a> 
+	<p></p>
+	<a href="{% url 'app1:topics' %}">Topics</a>
+	<p></p>
+	<p>Topics Created</p>
+	<ul>
+		{% for topic in topics %}
+			<li>
+			<a href="{% url 'app1:topic' topic.id %}">{{ topic }}</a>
+			</li>
+		{% empty %}
+			<li> No topics yet.</li>
+		{% endfor %}
+	</ul>
+
+
+</body>
+</html>
+	

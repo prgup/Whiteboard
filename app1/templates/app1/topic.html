@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> {{topic}}</title>
+</head>
+<body>
+	<a href = "{% url 'app1:home'  %}"> 
+		Home
+	</a> 
+	<p></p>
+	<a href="{% url 'app1:topics' %}">Topics</a>
+	<p></p>
+	Topic: {{topic}}
+
+	<p>Entries:</p>
+	<ul>
+	{% for entry in entries %}
+		<li>
+			{{entry.date_added|date:'M d, Y H:i'}}
+			{{ entry.text|linebreaks}}
+		</li>
+	{% empty %}
+		<li>
+			No Entries Yet.
+		</li>
+	{% endfor %}
+	</ul>
+
+</body>
+</html>
