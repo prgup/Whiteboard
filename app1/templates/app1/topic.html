@@ -1,23 +1,25 @@
+{% extends "app1/base.html" %}
+{% block content %}
 <!DOCTYPE html>
 <html>
 <head>
 	<title> {{topic}}</title>
 </head>
 <body>
-	<a href = "{% url 'app1:home'  %}"> 
-		Home
-	</a> 
-	<p></p>
-	<a href="{% url 'app1:topics' %}">Topics</a>
-	<p></p>
-	Topic: {{topic}}
+	
+	<p>Topic: {{topic}}</p>
+		<a href="{% url 'app1:add_entry' topic.id %}"> Add new entry</a> 
 
 	<p>Entries:</p>
+	<p>
 	<ul>
 	{% for entry in entries %}
 		<li>
 			{{entry.date_added|date:'M d, Y H:i'}}
 			{{ entry.text|linebreaks}}
+			<p>
+				<a href="{% url 'app1:edit_entry' entry.id %}"> Edit Entry</a>
+			</p>
 		</li>
 	{% empty %}
 		<li>
@@ -28,3 +30,4 @@
 
 </body>
 </html>
+{% endblock content %}

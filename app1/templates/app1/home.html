@@ -1,17 +1,14 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Journal</title>
-</head>
-<body>
-	<a href = "{% url 'app1:home'  %}"> 
-		Home
-	</a> 
-	<p></p>
- 	<a href="{% url 'app1:topics' %}">Topics</a>
-	<p></p>
+{% extends "app1/base.html" %}
+{% block content %}
+	<!DOCTYPE html>
+	<html>
+	<head>
+		<title>Whiteboard</title>
+	</head>
+	<body>
+		
+	 	<p>This website is a journal which we use to manage details of different topic we learn so far...  </p>
 
- 	<p>This website is a journal which we use to manage details of different topic we learn so far...  </p>
-
-</body>
-</html>
+	</body>
+	</html>
+{% endblock content %}

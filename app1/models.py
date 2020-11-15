@@ -10,7 +10,7 @@ class Topic(models.Model):
 
 class Entry(models.Model):
 	#topic = models.ForeignKey(Topic)# till DJANGO 1.9
-	topic = models.ForeignKey(Topic, on_delete=models.PROTECT )
+	topic = models.ForeignKey(Topic, on_delete=models.CASCADE )
 	text  =  models.TextField()
 	date_added = models.DateTimeField(auto_now_add = True)
 
