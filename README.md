@@ -1,12 +1,12 @@
 # Whiteboard
-A web app called Whiteboard created with Django.
+Web app created with Django.
 
 ## Table of contents
-* [General info](#general-info)
+* [General Info](#general-info)
 * [Technologies](#technologies)
 * [Features](#features)
 
-##General info
+## General Info
 Whiteboard allow users to log the topics they’re interested in and to make journal entries as they learn about each topic. 
 
 ## Technologies
